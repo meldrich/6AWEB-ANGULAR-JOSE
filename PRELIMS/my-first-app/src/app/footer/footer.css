@@ -1,0 +1,76 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+}
+
+th,
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sal);
+}
+
+tbody tr:hover {
+  background: #8882;
+}
+
+.level {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 1px solid var(--sal);
+  border-radius: 99px;
+  color: var(--sal);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.copyright {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--mut);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid var(--sal);
+  border-radius: 99px;
+  background: var(--sal);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn.alt {
+  background: transparent;
+  color: var(--txt);
+}
+
+.btn:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--ink);
+}

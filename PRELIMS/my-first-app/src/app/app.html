@@ -1,0 +1,75 @@
+<!-- NAVIGATION BAR -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="brand" href="#" (click)="go($event, 'top')">A. M. Jose</a>
+    <ul>
+      @for (link of links; track link.id) {
+        <li><a [href]="'#' + link.id" (click)="go($event, link.id)">{{ link.label }}</a></li>
+      }
+    </ul>
+    <button type="button" class="themebtn" (click)="toggleTheme()">
+      {{ theme === 'dark' ? 'Light' : 'Dark' }}
+    </button>
+  </div>
+</nav>
+
+<main class="resume">
+  <app-header
+    [fullName]="fullName"
+    [location]="location"
+    [email]="email"
+    [phone]="phone"
+    [profile]="profile"
+    [facts]="facts" />
+
+  <app-profile-card />
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <ol class="edu">
+      @for (e of education; track e.level) {
+        <li class="edu-item" [class.current]="e.current">
+          <span class="edu-years">{{ e.years }}</span>
+          <div>
+            <h3>
+              {{ e.level }}
+              @if (e.current) { <span class="now">Current</span> }
+            </h3>
+            <p class="edu-school">{{ e.school }}</p>
+            @if (e.note) { <p class="edu-note">{{ e.note }}</p> }
+          </div>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <app-skills
+    [skills]="skills"
+    (skillSelected)="onSkillSelected($event)" />
+
+  <section class="interaction">
+    <h2 class="section-title">Angular Interaction</h2>
+    <p>{{ message }}</p>
+  </section>
+
+  <!-- POSTERS: edit the list in app.ts -->
+  <section id="posters">
+    <h2 class="section-title">Posters I Designed</h2>
+    <ul class="pg">
+      @for (p of posters; track p.title) {
+        <li class="pg-card">
+          <img class="pg-img" [src]="p.imageUrl" [alt]="p.title + ' poster'">
+          <h3>{{ p.title }}</h3>
+          <p class="pg-desc">{{ p.description }}</p>
+        </li>
+      }
+    </ul>
+  </section>
+
+  <app-footer
+    [fullName]="fullName"
+    [email]="email"
+    [phone]="phone"
+    [proficiencies]="proficiencies" />
+</main>

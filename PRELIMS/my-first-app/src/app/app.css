@@ -1,0 +1,200 @@
+.resume {
+  max-width: 900px;
+  margin: 28px auto 40px;
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.interaction p {
+  margin: 0;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--sal);
+  background: var(--bg);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* ---------- Navigation bar ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--sal);
+  white-space: nowrap;
+}
+
+.nav ul {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.nav li a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav li a:hover,
+.themebtn:hover {
+  background: var(--sal);
+  color: var(--ink);
+}
+
+.themebtn {
+  font: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--txt);
+  padding: 4px 14px;
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+/* ---------- Education ---------- */
+.edu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+}
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.edu-item:last-child { border-bottom: 0; }
+
+.edu-item.current {
+  background: var(--bg);
+  border-left: 4px solid var(--sal);
+}
+
+.edu-years {
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--sal);
+}
+
+.edu h3 {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.now {
+  margin-left: 8px;
+  padding: 1px 10px;
+  border: 1px solid var(--sal);
+  border-radius: 99px;
+  color: var(--sal);
+  font-size: 0.65rem;
+}
+
+.edu-school {
+  margin: 2px 0 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.edu-note {
+  margin: 4px 0 0;
+  color: var(--mut);
+  font-size: 0.85rem;
+}
+
+/* ---------- Posters ---------- */
+.pg {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pg-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.pg-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--panel);
+}
+
+.pg-card h3 {
+  margin: 12px 0 2px;
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.pg-desc {
+  margin: 0;
+  color: var(--mut);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+  .nav-inner { flex-wrap: wrap; padding: 10px 16px; gap: 8px; }
+  .nav ul { order: 3; flex-basis: 100%; margin: 0; }
+  .themebtn { margin-left: auto; }
+}
+
+@media (max-width: 600px) {
+  .resume { margin: 12px; padding: 18px; }
+  .edu-item { grid-template-columns: 1fr; gap: 4px; }
+  .pg { grid-template-columns: 1fr; }
+}

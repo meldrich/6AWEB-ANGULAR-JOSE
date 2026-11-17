@@ -1,0 +1,103 @@
+/* ---------- Theme tokens (dark is default, light via data-theme) ---------- */
+:root {
+  --bg: #141413;
+  --panel: #1c1b19;
+  --txt: #ece0cc;
+  --mut: #ece0cca6;
+  --line: #8a847a66;
+  --sal: #d4bf9f;     /* main accent */
+  --ink: #1a1917;     /* text on top of accent */
+  --cream: #ece0cc;
+}
+
+:root[data-theme="light"] {
+  --bg: #efe6d6;
+  --panel: #e4d8c3;
+  --txt: #1a1917;
+  --mut: #1a1917a6;
+  --line: #6b665e55;
+  --sal: #1a1917;
+  --ink: #efe6d6;
+  --cream: #8c7a5e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* Soft blurred glows, like the hero of the portfolio */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+body::before {
+  width: 44vw;
+  aspect-ratio: 1;
+  left: -14vw;
+  bottom: -10vw;
+  background: var(--sal);
+  opacity: 0.18;
+}
+body::after {
+  width: 36vw;
+  aspect-ratio: 1;
+  right: -12vw;
+  top: -10vw;
+  background: #6b665e;
+  opacity: 0.6;
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  margin: 34px 0;
+}
+
+/* Shared heading style, used by several components. */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--txt);
+}
+
+.section-title::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--sal);
+  border-radius: 50%;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+app-root { display: block; }
+[id] { scroll-margin-top: 96px; }

@@ -1,0 +1,13 @@
+<section>
+  <h2 class="section-title">Key Skills</h2>
+  <ul>
+    @for (skill of skills(); track skill; let i = $index) {
+      <li>
+        <button type="button" class="skill" (click)="selectSkill(skill)">
+          <span class="num">{{ i < 9 ? '0' : '' }}{{ i + 1 }}</span>
+          {{ skill }}
+        </button>
+      </li>
+    }
+  </ul>
+</section>

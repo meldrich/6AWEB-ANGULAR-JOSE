@@ -1,0 +1,96 @@
+.intro {
+  padding-bottom: 26px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sal);
+}
+
+.intro h1 {
+  margin: 0 0 18px;
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 9vw, 5.4rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+  color: var(--sal);
+  overflow-wrap: anywhere;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact li,
+.contact a {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact a {
+  border-color: var(--sal);
+  transition: background 0.2s, color 0.2s;
+}
+
+.contact a:hover {
+  background: var(--sal);
+  color: var(--ink);
+}
+
+.profile-text {
+  max-width: 640px;
+  color: var(--mut);
+}
+
+@media (max-width: 600px) {
+  .intro h1 {
+    font-size: 2.3rem;
+  }
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
+.facts div {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+}
+
+.facts dt {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sal);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .facts { grid-template-columns: 1fr; }
+}
